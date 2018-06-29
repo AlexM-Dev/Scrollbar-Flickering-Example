@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             this.scbMain = new MetroFramework.Controls.MetroScrollBar();
             this.btnExample = new System.Windows.Forms.Button();
+            this.pnlBody = new System.Windows.Forms.Panel();
+            this.pnlBody.SuspendLayout();
             this.SuspendLayout();
             // 
             // scbMain
@@ -38,22 +40,33 @@
             // 
             // btnExample
             // 
-            this.btnExample.Location = new System.Drawing.Point(87, 265);
+            this.btnExample.Location = new System.Drawing.Point(62, 261);
             this.btnExample.Name = "btnExample";
-            this.btnExample.Size = new System.Drawing.Size(75, 48);
+            this.btnExample.Size = new System.Drawing.Size(75, 129);
             this.btnExample.TabIndex = 1;
             this.btnExample.Text = "Out of Bounds";
             this.btnExample.UseVisualStyleBackColor = true;
+            // 
+            // pnlBody
+            // 
+            this.pnlBody.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlBody.Controls.Add(this.btnExample);
+            this.pnlBody.Location = new System.Drawing.Point(0, 0);
+            this.pnlBody.Name = "pnlBody";
+            this.pnlBody.Size = new System.Drawing.Size(290, 391);
+            this.pnlBody.TabIndex = 2;
             // 
             // CtrlScroll
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnExample);
+            this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.scbMain);
             this.Name = "CtrlScroll";
             this.Size = new System.Drawing.Size(300, 300);
-            this.Load += new System.EventHandler(this.CtrlScroll_Load);
+            this.Resize += new System.EventHandler(this.CtrlScroll_Resize);
+            this.pnlBody.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -62,5 +75,6 @@
 
         private MetroFramework.Controls.MetroScrollBar scbMain;
         private System.Windows.Forms.Button btnExample;
+        private System.Windows.Forms.Panel pnlBody;
     }
 }
